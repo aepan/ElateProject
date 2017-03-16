@@ -112,19 +112,19 @@
                     soupType: function () {
                         var type = [
                             {
+                                name_en: "Sukiyaki Soup",
+                                name_th: "ซุปสุกี้ญี่ปุ่น",
+                                description: "น้ำซุปสูตรดั้งเดิมที่รสชาติหอมหวาน กลมกล่อม เข้มข้น ด้วยรสโชยุ ผสมกับสาเกชั้นดีของญี่ปุ่น",
+                                type: "Both",
+                                main_image: "images/soup/menu_soup_2.png",
+                            },
+                            {
                                 name_en: "Shabu Shabu Soup",
                                 name_th: "ซุปชาบู ชาบู",
                                 description: 'น้ำซุปใส รสชาติเบาบาง ได้ประโยชน์จากสาหร่ายคอมบุ ไม่มีคอลเลสเตอรอล',
                                 type: "Both",
                                 main_image: "images/soup/menu_soup_1.png",
                                 
-                            },
-                            {
-                                name_en: "Sukiyaki Soup",
-                                name_th: "ซุปสุกี้ญี่ปุ่น",
-                                description: "น้ำซุปสูตรดั้งเดิมที่รสชาติหอมหวาน กลมกล่อม เข้มข้น ด้วยรสโชยุ ผสมกับสาเกชั้นดีของญี่ปุ่น",
-                                type: "Both",
-                                main_image: "images/soup/menu_soup_2.png",
                             },
                             {
                                 name_en: "Half Half Soup",
