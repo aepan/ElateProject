@@ -1,0 +1,44 @@
+﻿<div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 el__nav">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--left" ng-hide="isConfirm" ng-click="go_back()">
+              <span class="glyphicon glyphicon-triangle-left"></span> Back
+            </button>
+        </div>
+        <div class="col-xs-8 col-sm-6 col-md-4"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--right" ng-click="confirm_order()">
+                Confirm Order <span class="glyphicon glyphicon-triangle-right"></span>
+            </button>
+        </div>
+        <div class="col-sm-1 col-md-2"></div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__header">
+        <h5 class="el__header--small">ORDER</h5>
+        <h1 class="el__header--large">CONFIRM</h1>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div ng-show="warning_order" class="alert alert-warning">
+            <strong>Don't have order for send.</strong>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__confirm__content container" ng-repeat="confirm in order_list_confirm">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-11 col-sm-9 col-md-7 el__confirm__content__menuDesc">
+            <div class="col-xs-9 col-sm-9 col-md-9 ">
+                <h2 class="el__content__desc--th">{{confirm.name_th}}</h2>
+                <span class="el__content__desc--en">{{confirm.name_en}}</span>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 el__confirm__content__amount">
+                <button class="btn btn-default el__btn--amount" ng-click="decreaseItem(confirm)">-</button>
+                <span>{{confirm.quantity}}</span>
+                <button class="btn btn-default el__btn--amount" ng-click="increaseItem(confirm)">+</button>
+            </div>
+        </div>
+        <button type="button" class="col-xs-1 col-sm-1 col-md-1 btn btn-link el__confirm__content__remove" ng-click="remove_order(confirm)">
+            &times;
+        </button>
+        <div class="col-sm-1 col-md-2"></div>
+    </div>
+</div>

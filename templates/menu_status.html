@@ -1,0 +1,59 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 el__nav">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--left" ng-click="go_menu()">
+              <span class="glyphicon glyphicon-triangle-left"></span> MENU
+            </button>
+        </div>
+        <div class="col-xs-8 col-sm-6 col-md-4"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--right"data-toggle="modal" data-target="#confirmCheckBill">
+              Check Bill <span class="glyphicon glyphicon-triangle-right"></span>
+            </button>
+        </div>
+        <div class="col-sm-1 col-md-2"></div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__header">
+        <h5 class="el__header--small">ORDER</h5>
+        <h1 class="el__header--large">STATUS</h1>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__status__content container" ng-repeat="order in order_list_status">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-11 col-sm-9 col-md-7 el__status__content__menuDesc">
+            <div class="col-xs-11 col-sm-11 col-md-11 ">
+                <h2 class="el__content__desc--th">{{order.name_th}}</h2>
+                <span class="el__content__desc--en">{{order.name_en}}</span>
+            </div>
+            <div  class="col-xs-1 col-sm-1 col-md-1 el__status__content__amount">
+                <span>{{order.quantity}}</span>
+            </div>
+        </div>
+        <div ng-switch on="order.status" class="col-xs-1 col-sm-1 col-md-1 el__status__content__status">
+            <div ng-switch-when="Order"><span class="col-xs-12 col-sm-12 col-md-12 glyphicon glyphicon-time el__status__content__icon"></span><div class="col-xs-12 col-sm-12 col-md-12">{{order.status}}</div></div>
+            <div ng-switch-when="Success"><span class="col-xs-12 col-sm-12 col-md-12 glyphicon glyphicon-ok el__status__content__icon"></span><div class="col-xs-12 col-sm-12 col-md-12">{{order.status}}</div></div>
+            <div ng-switch-default><span class="col-xs-12 col-sm-12 col-md-12 glyphicon glyphicon-time el__status__content__icon"></span><div class="col-xs-12 col-sm-12 col-md-12">Wait</div></div>
+        </div>
+        <div class="col-sm-1 col-md-2"></div>
+    </div>
+</div>
+<div id="confirmCheckBill" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirm</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to check bill?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-default btn-ok" ng-click="check_bill()">Yes</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>

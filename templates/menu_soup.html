@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 el__nav">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--left" ng-click="go_back()">
+              <span class="glyphicon glyphicon-triangle-left"></span> Back
+            </button>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__header">
+        <h5 class="el__header--small">SELECT</h5>
+        <h1 class="el__header--large">SOUP</h1>
+    </div>
+    <div class="el__soup__content">
+        <div class="col-xs-11 col-sm-11 col-md-12 el__soup__list" ng-repeat="soup in all_soup_types" ng-if="soup.type == buffetType_selected || soup.type == 'Both'">
+            <div class="col-sm-1 col-md-2"></div>
+            <div class="col-xs-6 col-sm-6 col-md-4 el__soup__content--description">
+                <h2 class="el__content__desc--en">{{soup.name_en}}</h2>
+                <h3 class="el__content__desc--th">{{soup.name_th}}</h3>
+                <span class="el__content__desc--th">{{soup.description}}</span>
+                 <button class="btn btn-link col-xs-12 col-sm-12 col-md-12 el__soup__selectBtn" ng-click="select_soup(soup)">SELECT</button>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 el__soup__content--img">
+                <img ng-src="{{soup.main_image}}">
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-2"></div>
+        </div>
+    </div>
+</div>

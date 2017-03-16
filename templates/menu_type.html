@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 el__header">
+        <h5 class="el__header--small">SELECT</h5>
+        <h1 class="el__header--large">TYPE</h1>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__type__list" ng-repeat="type in all_buffet_types">
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 el__type__list--main">
+            <img ng-src="{{type.main_image}}" class="el__type__list__mainImg" />
+            <div class="el__type__list__content">
+                <div class="well well-sm el_type__list__well">
+                    <h1 class="el__type__list__well--price">{{type.price}}</h1>
+                    <p class="el__type__list__well--name">{{type.name}}</p>
+                        <button class="btn btn-link col-md-12 el__type__list__well--selectBtn" ng-click="select_type(type)">SELECT</button>
+                </div>
+                <div>
+                    <img ng-src="{{sub}}" class="el__type__list--sub__mainImg" ng-repeat="sub in type.sub_image" ng-if="$index < 4" />
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 el__type__list--sub">
+            <img ng-src="{{sub}}" class="el__type__list--sub__Img" ng-repeat="sub in type.sub_image" ng-if="$index >= 4"/>
+        </div>
+       
+    </div>
+</div>

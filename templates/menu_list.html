@@ -1,0 +1,54 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 el__nav">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--left" ng-hide="isConfirm" ng-click="go_back()">
+              <span class="glyphicon glyphicon-triangle-left"></span> Back
+            </button>
+        </div>
+        <div class="col-xs-8 col-sm-6 col-md-4"></div>
+        <div class="col-xs-2 col-sm-2 col-md-2 el__nav__btn">
+            <button type="button" class="btn btn-link el__nav__btn--right" ng-click="send_order()">
+              Send Order <span class="glyphicon glyphicon-triangle-right"></span> 
+            </button>
+        </div>
+        <div class="col-sm-1 col-md-2"></div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__header">
+        <h5 class="el__header--small">SELECT</h5>
+        <h1 class="el__header--large">MENU</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 col-md-1"></div>
+        <div class="col-xs-12 col-sm-12 col-md-12 el__list__filter">
+            <div ng-show="warning_order" class="alert alert-warning">
+                <strong>Please select your order before send.</strong>
+            </div>
+            <select ng-model="showFilter" class="el__list__filter--select">
+                <option value="" selected>All</option>
+                <option ng-repeat="cat in all_categories" value="{{cat}}">{{cat}}</option>
+            </select>
+        </div>
+        <div class="col-sm-1 col-md-1"></div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__list__content">
+        <div class="container el__list__content--row">
+            <div class="row "  ng-repeat="row in all_menu_type" ng-if="$index%4 == 0" ng-init="rowIdx=$index">
+                <div class="col-sm-3 col-md-3 el__list__content--list" ng-repeat="menu in all_menu_type | filter:{category:showFilter||undefined}" ng-if="($index >= rowIdx && $index< rowIdx+4)">
+                    <img ng-src="{{menu.main_image}}" />
+                    <div class="el__list__content__desc">
+                        <h4 class="el__content__desc--th">{{menu.name_th}}</h4>
+                        <h5 class="el__content__desc--en">{{menu.name_en}}</h5>
+                        <div>
+                            <span class="el__content__desc--en">Order</span>
+                            <button class="btn btn-default el__btn--amount" ng-click="decreaseItem(menu)">-</button>
+                            <span>{{menu.quantity}}</span>
+                            <button class="btn btn-default el__btn--amount" ng-click="increaseItem(menu)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

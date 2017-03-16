@@ -1,0 +1,30 @@
+[
+	{
+      	name: "Premium",
+	price: 690,
+        main_image: "images/buffet_type/premium/menu_type_p1.png",
+	sub_image: ["images/buffet_type/premium/menu_type_p2.png",
+                    "images/buffet_type/premium/menu_type_p3.png",
+                    "images/buffet_type/premium/menu_type_p4.png",
+                    "images/buffet_type/premium/menu_type_p5.png",
+                    "images/buffet_type/premium/menu_type_p6.png",
+                    "images/buffet_type/premium/menu_type_p7.png",
+                    "images/buffet_type/premium/menu_type_p8.png",
+                    "images/buffet_type/premium/menu_type_p9.png",
+                    "images/buffet_type/premium/menu_type_p10.png",
+                    "images/buffet_type/premium/menu_type_p11.png",
+                    "images/buffet_type/premium/menu_type_p12.png",
+                    "images/buffet_type/premium/menu_type_p13.png",
+                    "images/buffet_type/premium/menu_type_p14.png",
+                    "images/buffet_type/premium/menu_type_p15.png"]
+	},
+	{
+        name: "Normal",
+        price: 490,
+        main_image: "images/buffet_type/normal/menu_type_n1.png",
+        sub_image: ["images/buffet_type/normal/menu_type_n2.png",
+                   "images/buffet_type/normal/menu_type_n3.png",
+                   "images/buffet_type/normal/menu_type_n4.png",
+                   "images/buffet_type/normal/menu_type_n5.png"]
+        }
+]

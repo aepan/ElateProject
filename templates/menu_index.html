@@ -1,0 +1,28 @@
+﻿<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 el__index__header">
+        <h1 class="el__index__header--name">{{name}}</h1> 
+        <h5 class="el__index__header--nameDesc">{{name_description}}</h5>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__index__alert">
+        <div ng-show="warning_show" class="alert alert-warning">
+            <strong>{{warning_text}}</strong>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__index__order">
+         <button class="btn btn-link col-md-12 el__index__orderBtn" ng-click="start_order()"><span class="glyphicon glyphicon-play-circle"></span></button>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__index__tableNo">
+        <div class="dropdown">
+            <button class="btn btn-link dropdown-toggle el__index__tableNo--tableBtn " type="button" data-toggle="dropdown">Table Number  {{tableNumber}}  <span class="caret"></span></button>
+            <ul class="dropdown-menu el__index__tableNo--dropdown">
+                <li ng-repeat="tb in tableNumberList"><a href="#" ng-click="setTableNo(tb)">{{tb}}</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 el__index__people">
+        <span>People</span>
+        <button class="btn btn-default el__btn--amount" ng-click="decreasePeople()">-</button>
+        <span>{{people}}</span>
+        <button class="btn btn-default el__btn--amount" ng-click="increasePeople()">+</button>
+    </div>
+</div>
